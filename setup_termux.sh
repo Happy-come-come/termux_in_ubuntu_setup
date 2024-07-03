@@ -52,4 +52,5 @@ touch shellscripts/____dummy_.sh
 cd ~/ubuntu-in-termux
 ./startubuntu.sh
 chmod +x startubuntu_mod.sh
-./startubuntu_mod.sh
+echo "セットアップが終了しました。termuxを再起動してください。"
+read -t 5 -ep "何かキーを押すか、5秒後にexitします。" && rm -- "$0"  && exit 0
