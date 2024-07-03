@@ -21,9 +21,10 @@ git clone https://github.com/MFDGaming/ubuntu-in-termux.git
 cd ubuntu-in-termux
 chmod +x ubuntu.sh
 echo "使用可能バージョン"
-curl -s 'https://partner-images.canonical.com/core/?C=M;O=D' | \grep 'alt\=\"\[DIR\]\"' | grep -Eo 'href\=\"[A-z]*'| sed -e 's/href="//g'
+curl -s 'https://partner-images.canonical.com/core/?C=M;O=D' | \grep 'alt\=\"\[DIR\]\"' 2>/dev/null | \grep -Eo 'href\=\"[A-z]*' 2>/dev/null | sed -e 's/href="//g'
 echo "名前とバージョンの対応はここを見ればわかるかも"
 echo "https://hub.docker.com/r/arm64v8/ubuntu/"
+echo "何も入力せずエンター押したらデフォルトのになります。"
 read -ep "使うバージョンの指定: " dVersion
 if [[ "${dVersion}" =~ ^.{3,}$ ]]; then
     sed -ie 's@UBUNTU_VERSION=.*$@UBUNTU_VERSION='${dVersion}'@g' ubuntu.sh
