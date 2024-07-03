@@ -1,5 +1,6 @@
 echo 'Ubuntu側のSetup開始'
 export HOME=/home/android
+[[ -f /etc/apt/sources.list ]] && sed -iE 's@https?://ports.ubuntu.com/ubuntu-ports/@https://ftp.yz.yamagata-u.ac.jp/pub/linux/ubuntu/archives/@g' /etc/apt/sources.list 
 apt update
 apt upgrade -y
 apt install aria2 curl git language-pack-ja nkf sudo tar unar unzip wget zip zsh -y
