@@ -11,6 +11,7 @@ git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh-
 #元の環境のrc
 curl -Lo ~/.bashrc "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/termux/bashrc"
 curl -Lo ~/.zshrc "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/termux/zshrc"
+curl -Lo ~/.myfunctions "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/termux/myfunctions"
 
 mkdir -p ~/.termux
 curl -Lo ~/.termux/CascadiaMono.ttf "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/fonts/CascadiaMono.ttf"

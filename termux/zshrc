@@ -89,7 +89,7 @@ zstyle ':vcs_info:git:*' unstagedstr '!'
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
 	source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
-export DISPLAY="$(grep nameserver /etc/resolv.conf | sed 's/nameserver //'):0"
+export DISPLAY="0:0"
 export EDITOR='vim'
 export VISUAL='vim'
 #プロンプトの設定。ここを変えるとコマンドを打つ時の左側の顔を変えることができる。
