@@ -7,8 +7,8 @@ cd ${HOME}
 update-locale LANG="ja_JP.UTF-8"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && \
 yes | ~/.fzf/install
-adduser -m "forinstall"
-echo "forinstall ALL=(ALL:ALL) ALL" > /etc/sudoers
+#adduser -m "forinstall"
+#echo "forinstall ALL=(ALL:ALL) ALL" > /etc/sudoers
 rm  -f /root/.bashrc
 echo "UbuntuのSetup完了"
 echo "Ubuntu再起動"
