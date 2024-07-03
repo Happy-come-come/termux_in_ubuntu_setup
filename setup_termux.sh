@@ -2,7 +2,7 @@
 apt update
 yes|apt upgrade -y
 apt update
-apt install wget proot git vim tar unzip curl -y
+apt install wget proot git vim tar unzip curl zsh -y
 cd ~
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ~/.zsh-completions
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-syntax-highlighting
@@ -34,7 +34,7 @@ cd ~/ubuntu-in-termux/ubuntu-fs/root
 #bashrcにインストールスクリプトを書いて自動で実行させる。
 curl -Lo .bashrc "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/ubuntu/setup_bashrc"
 cd ~/ubuntu-in-termux/ubuntu-fs/home/android
-cp -r ~/.zsh-completions ~/.zsh-syntax-highlighting ~/.zsh-autosuggestions .
+cp -rf ~/.zsh-completions ~/.zsh-syntax-highlighting ~/.zsh-autosuggestions .
 #zshrc
 curl -Lo .zshrc "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/ubuntu/zshrc"
 #myfunctions
