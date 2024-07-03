@@ -3,7 +3,7 @@
 apt update
 yes|apt upgrade -y
 apt update
-apt install wget proot git vim tar unzip curl zsh -y
+apt install aria2 wget proot git vim tar unzip curl zsh -y
 cd ~
 git clone --depth 1 https://github.com/zsh-users/zsh-completions.git ~/.zsh-completions
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-syntax-highlighting
