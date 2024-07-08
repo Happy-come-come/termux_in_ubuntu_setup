@@ -24,7 +24,7 @@ echo '大本のtermux環境の構築終了'
 mkdir -p ~/ubuntu-in-termux
 curl -Lo ~/ubuntu-in-termux/ubuntu.sh "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/ubuntu-in-termux.sh"
 #git clone https://github.com/MFDGaming/ubuntu-in-termux.git
-#cd ubuntu-in-termux
+cd ubuntu-in-termux
 #chmod +x ubuntu.sh
 
 echo "使用可能バージョン"
