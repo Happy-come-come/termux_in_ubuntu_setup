@@ -25,7 +25,7 @@ mkdir -p ~/ubuntu-in-termux
 curl -Lo ~/ubuntu-in-termux/ubuntu.sh "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/ubuntu-in-termux.sh"
 #git clone https://github.com/MFDGaming/ubuntu-in-termux.git
 cd ubuntu-in-termux
-#chmod +x ubuntu.sh
+chmod +x ubuntu.sh
 
 echo "使用可能バージョン"
 curl -s "https://cloud-images.ubuntu.com/minimal/releases/?C=M;O=D" | \grep "^<img" | \grep -v "\[END OF" | grep -o '[0-9]*\.[0-9]* .*$' | sed -e 's@LTS @@g' | awk -F'[\ |(]' '{printf "%s__%s\n",$1,$3}' 2>/dev/null | sort -nr > ~/ubuntu-in-termux/ubuntu_versions.txt
