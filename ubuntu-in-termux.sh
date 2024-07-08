@@ -36,6 +36,7 @@ install1 () {
 				;;
 			esac
 			#wget https://partner-images.canonical.com/core/${UBUNTU_VERSION}/current/ubuntu-${UBUNTU_VERSION}-core-cloudimg-${ARCHITECTURE}-root.tar.gz -q -O ubuntu.tar.gz
+			echo "https://cloud-images.ubuntu.com/releases/${UBUNTU_VERSION_NAME}/release/ubuntu-${UBUNTU_VERSION_NUM}-server-cloudimg-${ARCHITECTURE}-root.tar.xz"
 			aria2c -x16 -s16 -k1M -q -o ubuntu.tar.gz https://cloud-images.ubuntu.com/releases/${UBUNTU_VERSION_NAME}/release/ubuntu-${UBUNTU_VERSION_NUM}-server-cloudimg-${ARCHITECTURE}-root.tar.xz
 			printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Download complete!\n"
 		fi
