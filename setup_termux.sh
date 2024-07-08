@@ -1,5 +1,5 @@
 #!/bin/bash
-[[ -f ~/../usr/etc/apt/sources.list ]] && sed -Ei 's@https?\://packages(-cf)?.termux.(dev|org)/apt/termux-main/@https://mirrors.cbrx.io/apt/termux/termux-main/@g' ~/../usr/etc/apt/sources.list
+[[ -f ~/../usr/etc/apt/sources.list ]] && sed -Ei 's@https?\://packages(-cf)?\.termux\.(dev|org)/apt/termux-main/?@https://mirrors.cbrx.io/apt/termux/termux-main/@g' ~/../usr/etc/apt/sources.list
 apt update
 yes|apt upgrade -y
 apt update
