@@ -17,20 +17,20 @@ curl -Lo ~/.myfunctions "https://raw.githubusercontent.com/Happy-come-come/termu
 mkdir -p ~/.termux
 curl -Lo ~/.termux/CascadiaMono.ttf "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/fonts/CascadiaMono.ttf"
 ln -s ~/.termux/CascadiaMono.ttf ~/.termux/font.ttf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && \
+yes | ~/.fzf/install
 
 echo '大本のtermux環境の構築終了'
-git clone https://github.com/MFDGaming/ubuntu-in-termux.git
-cd ubuntu-in-termux
-chmod +x ubuntu.sh
+mkdir -p ~/ubuntu-in-termux
+curl -Lo ~/ubuntu-in-termux/ubuntu.sh "https://raw.githubusercontent.com/Happy-come-come/termux_in_ubuntu_setup/master/ubuntu-in-termux.sh"
+#git clone https://github.com/MFDGaming/ubuntu-in-termux.git
+#cd ubuntu-in-termux
+#chmod +x ubuntu.sh
+
 echo "使用可能バージョン"
-curl -s 'https://partner-images.canonical.com/core/?C=M;O=D' | \grep 'alt\=\"\[DIR\]\"' 2>/dev/null | \grep -Eo 'href\=\"[A-z]*' 2>/dev/null | sed -e 's/href="//g'
-echo "名前とバージョンの対応はここを見ればわかるかも"
-echo "https://hub.docker.com/r/arm64v8/ubuntu/"
-echo "何も入力せずエンター押したらデフォルトのになります。"
-read -ep "使うバージョンの指定: " dVersion
-if [[ "${dVersion}" =~ ^.{3,}$ ]]; then
-    sed -ie 's@UBUNTU_VERSION=.*$@UBUNTU_VERSION='${dVersion}'@g' ubuntu.sh
-fi
+curl -s "https://cloud-images.ubuntu.com/minimal/releases/?C=M;O=D" | \grep "^<img" | \grep -v "\[END OF" | grep -o '[0-9]*\.[0-9]* .*$' | sed -e 's@LTS @@g' | awk -F'[\ |(]' '{printf "%s__%s\n",$1,$3}' 2>/dev/null | sort -nr > ~/ubuntu-in-termux/ubuntu_versions.txt
+UBUNTU_VERSION="$(cat ~/ubuntu-in-termux/ubuntu_versions.txt | ~/.fzf/bin/fzf --reverse --header="インストールしたいUbuntuのバージョンを")"
+sed -ie 's@UBUNTU_VERSION=.*$@UBUNTU_VERSION='${UBUNTU_VERSION}'@g' ubuntu.sh
 echo "Ubuntuダウンロード中……"
 ./ubuntu.sh -y
 echo "ダウンロード完了"
